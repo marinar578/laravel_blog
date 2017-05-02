@@ -24,18 +24,11 @@ class PostsController extends Controller
 
   public function store()
   {
-    // var_dump("hi"); die();
-    // Create a new post using the request data
-    $post = new Post;
+    Post::create([
+      'title' => request('title'),
+      'body' => request('body')
+    ]);
 
-    $post->title = request('title');
-    $post->body = request('body');
-
-    // dd(request('title'));
-    // Save it to the database
-    $post->save();
-
-    // And then redirect to the home page
     return redirect('/');
   }
 }
