@@ -28,7 +28,9 @@
 
     <div class="container">
       <div class="row">
-        @yield ('content')
+        <div class="col-sm-8 blog-main">
+          @yield ('content')
+        </div>
 
         @include ('layouts.sidebar')
       </div>
